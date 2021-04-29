@@ -35,7 +35,14 @@ const showColor = () => {
   return (
     <div className="App">
         <p>Check color :</p>
-        <input type="text" id="colorCheck"></input>
+        <select id="colorCheck">
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="bronze">bronze</option>
+            <option value="purple">purple</option>
+            <option value="chocolate">chocolate</option>
+            <option value="gold">gold</option>
+        </select>
         <button onClick={showColor}>Check it</button>
         <p id='appendColor'></p>
     </div>
