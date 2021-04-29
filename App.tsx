@@ -19,13 +19,17 @@ let theColors: Colors = {
     columnE: ['ruby', 'bronze', 'gold', 'aqua', 'azure', 'Cinereous', 'Cinnabar', 'Citron']
 }
  
-const CheckColor = (theArray: string) => {
-  return theArray === (document.getElementById("colorCheck") as HTMLInputElement).value;
-}
-
 const showColor = () => {
-  let getColor : any = theColors.columnA.filter(CheckColor);
-  document.getElementById("appendColor")!.innerHTML = getColor;
+  let value = (document.getElementById("colorCheck") as HTMLInputElement).value;
+  let getColor : any = theColors.columnA.includes(value);
+
+  if(getColor === true){
+    document.getElementById("appendColor")!.innerHTML = `Warna ${value} tersedia`;
+  }
+  else{
+    document.getElementById("appendColor")!.innerHTML = `Tidak ada warna ${value}`;
+  }
+  
 }
 
   return (
